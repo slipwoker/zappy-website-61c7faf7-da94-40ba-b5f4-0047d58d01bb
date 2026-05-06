@@ -43,16 +43,16 @@ Information about WCAG compliance and accessibility features.
 - (No contact details configured yet.)
 
 ### Contact form
-- URL: https://example.com/contact
+- URL: https://example.com
 - Endpoint: https://example.com/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
-  - `full_name` (text, required)
-  - `email` (email, required)
+  - `fullname` (text, required)
   - `phone` (tel, required)
-  - `message` (textarea)
-  - `privacy_consent` (checkbox, required)
+  - `email` (email)
+  - `city` (text)
+  - `notes` (textarea)
 
 ---
 
