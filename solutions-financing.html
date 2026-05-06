@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>פתרונות מימון חכמים שהגג שלך מממן — SUNVEX ENERGY</title>
+    <meta name="description" content="מערכת סולארית עם אגירת אנרגיה, פתרונות מימון נגישים והכנסה ממכירת חשמל לחברת החשמל — כל מה שצריך כדי להפוך את הגג לנכס רווחי. בדוק את האפשרויות שלך!">
+    <meta name="keywords" content="פתרונות מימון, מערכת סולארית עם אגירת אנרגיה, הכנסה ממכירת חשמל לחברת החשמל, התקנת פאנלים סולאריים לבית פרטי, ליווי מלא מול חברת החשמל">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '61c7faf7-da94-40ba-b5f4-0047d58d01bb',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="פתרונות מימון חכמים שהגג שלך מממן — SUNVEX ENERGY">
+    <meta property="og:description" content="מערכת סולארית עם אגירת אנרגיה, פתרונות מימון נגישים והכנסה ממכירת חשמל לחברת החשמל — כל מה שצריך כדי להפוך את הגג לנכס רווחי. בדוק את האפשרויות שלך!">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="פתרונות מימון חכמים שהגג שלך מממן — SUNVEX ENERGY">
+    <meta name="twitter:description" content="מערכת סולארית עם אגירת אנרגיה, פתרונות מימון נגישים והכנסה ממכירת חשמל לחברת החשמל — כל מה שצריך כדי להפוך את הגג לנכס רווחי. בדוק את האפשרויות שלך!">
+    <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
+      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-light) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-light) !important; white-space: normal !important; }
+        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
+        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-light) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+
+    <style id="zappy-widget-visibility">
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box, .mic-access-tool-box, #mic-init-access-tool #mic-access-tool-box,
+        div[id*="mic-access-tool-box"], ._access-menu {
+          visibility: hidden; opacity: 0; pointer-events: auto !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box, .mic-access-tool-box, #mic-init-access-tool #mic-access-tool-box,
+        div[id*="mic-access-tool-box"], ._access-menu {
+          visibility: hidden; opacity: 0; pointer-events: auto !important;
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+
+  <button class="phone-header-btn" data-phone="[business_phone]" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+
+  <div class="nav-container">
+    <div class="nav-right-group"><div class="nav-brand">
+      <a href="/" class="logo-link">
+        <img src="/assets/sunvex-energy-logo.webp" alt="SUNVEX ENERGY" class="logo">
+      </a>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="/">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/solutions-financing">פתרונות ומימון</a></li></ul></div>
+
+    
+
+    <div class="nav-cta-container">
+      <a href="/contact" class="nav-cta-btn">צור קשר</a>
+    </div>
+  </div>
+</nav>
+<script>
+
+// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    // DECLARE VARIABLES EARLY to avoid Temporal Dead Zone errors
+    // These are used in multiple places below
+    let mobileToggle = document.getElementById('mobileToggle') ||
+                       document.querySelector('.mobile-toggle') ||
+                       document.querySelector('.hamburger') ||
+                       document.querySelector('.hamburger-menu') ||
+                       document.querySelector('.menu-toggle') ||
+                       document.querySelector('.burger-menu') ||
+                       document.querySelector('[aria-label="Menu"]') ||
+                       document.querySelector('[aria-label="תפריט"]');
+    
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage && bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Mobile button colors are set by Claude's AI-generated CSS (same as .nav-menu a)
+      // No dynamic color overrides needed - colors come from the generated navbar CSS
+      console.log('[Navbar] Mobile button colors preserved from Claude CSS (luminance:', luminance.toFixed(2) + ')');
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const htmlDir = document.documentElement.dir || 'ltr';
+      // Check both dir attribute AND lang for RTL detection
+      // dir="rtl" is the most reliable indicator
+      const isRTL = htmlDir === 'rtl' || htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 6px !important;
+            background: none !important;
+            color: var(--nav-text, var(--text-light)) !important;
+          }
+          
+          /* LTR positioning (default): hamburger LEFT, phone RIGHT */
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+          html[dir="ltr"] .mobile-toggle {
+            left: 12px !important;
+            right: auto !important;
+          }
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+          html[dir="ltr"] .phone-header-btn {
+            right: 12px !important;
+            left: auto !important;
+          }
+          
+          /* RTL positioning: hamburger RIGHT, phone LEFT */
+          html[dir="rtl"] .mobile-toggle,
+          html[lang="he"] .mobile-toggle,
+          html[lang="ar"] .mobile-toggle {
+            right: 12px !important;
+            left: auto !important;
+          }
+          html[dir="rtl"] .phone-header-btn,
+          html[lang="he"] .phone-header-btn,
+          html[lang="ar"] .phone-header-btn {
+            left: 12px !important;
+            right: auto !important;
+          }
+          
+          /* CRITICAL: Ensure nav-container has min-height on mobile */
+          /* All children are positioned absolutely/fixed on mobile, so height:auto collapses to 0 */
+          .nav-container {
+            min-height: 70px !important;
+            position: relative !important;
+          }
+          
+          /* Ensure SVG icons are properly sized and inherit color */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* Reset nav-cta-container on mobile - remove desktop box-shadow/padding */
+          /* that creates a visible ghost box when CTA button is hidden */
+          .nav-cta-container {
+            box-shadow: none !important;
+            padding: 0 !important;
+          }
+          
+          /* Hide nav-cta-container entirely on mobile when there's no lang-switcher */
+          /* (only the CTA button is inside, and it's hidden on mobile) */
+          .nav-cta-container:not(:has(.lang-switcher)) {
+            display: none !important;
+          }
+          
+          /* CRITICAL: Prevent hero image fade gradient from bleeding over headline text */
+          /* The .image-fade-gradient has bottom: -30px (extends below parent) */
+          /* On mobile stacked layout, this overlaps the h1 text below the image */
+          .hero-image-column {
+            overflow: hidden !important;
+          }
+          .image-fade-gradient {
+            bottom: 0 !important;
+          }
+          
+          /* Hide desktop language switcher on mobile - hamburger menu handles it */
+          /* High specificity to override stored CSS */
+          .lang-switcher,
+          .nav-cta-container .lang-switcher,
+          .nav-container .lang-switcher,
+          .navbar .lang-switcher,
+          .navbar .nav-cta-container .lang-switcher {
+            display: none !important;
+          }
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      // ONLY apply inline positioning styles on mobile viewport
+      // On desktop, the CSS handles hiding these buttons with display: none
+      // Inline styles were breaking desktop layout by overriding CSS
+      const isMobileViewport = window.innerWidth <= 768;
+      
+      if (mobileToggle) {
+        // Icon sizing applies to all viewports for consistency
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          mobileToggle.style.setProperty('position', 'absolute', 'important');
+          mobileToggle.style.setProperty('top', '50%', 'important');
+          mobileToggle.style.setProperty('transform', 'translateY(-50%)', 'important');
+          mobileToggle.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          
+          console.log('[Navbar] Mobile toggle positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          mobileToggle.style.removeProperty('position');
+          mobileToggle.style.removeProperty('top');
+          mobileToggle.style.removeProperty('transform');
+          mobileToggle.style.removeProperty('z-index');
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared mobile toggle inline positioning');
+        }
+      }
+      
+      if (phoneBtn) {
+        // Icon sizing applies to all viewports
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          phoneBtn.style.setProperty('position', 'absolute', 'important');
+          phoneBtn.style.setProperty('top', '50%', 'important');
+          phoneBtn.style.setProperty('transform', 'translateY(-50%)', 'important');
+          phoneBtn.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          
+          console.log('[Navbar] Phone button positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          phoneBtn.style.removeProperty('position');
+          phoneBtn.style.removeProperty('top');
+          phoneBtn.style.removeProperty('transform');
+          phoneBtn.style.removeProperty('z-index');
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared phone button inline positioning');
+        }
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+    // Re-query in case DOM changed (mobileToggle already declared at top of function)
+    mobileToggle = document.getElementById('mobileToggle') ||
+                   document.querySelector('.mobile-toggle') ||
+                   document.querySelector('.hamburger') ||
+                   document.querySelector('.hamburger-menu') ||
+                   document.querySelector('.menu-toggle') ||
+                   document.querySelector('.burger-menu') ||
+                   document.querySelector('[aria-label="Menu"]') ||
+                   document.querySelector('[aria-label="תפריט"]');
+    
+    // EXPANDED SEARCH: Find nav menu by ID or class
+    const navMenu = document.getElementById('navMenu') ||
+                  document.querySelector('.nav-menu') ||
+                  document.querySelector('.nav-links') ||
+                  document.querySelector('nav ul:not(.submenu)');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found:', { toggle: !!mobileToggle, menu: !!navMenu });
+      return;
+    }
+    
+    // Ensure navMenu has ID for CSS targeting
+    if (!navMenu.id) {
+      navMenu.id = 'navMenu';
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu on button click - use newToggle now
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = this.querySelector('.hamburger-icon');
+      const closeIcon = this.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    });
+    
+    // Close menu when clicking nav links (but NOT dropdown toggles)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Don't close if it's a dropdown child (unless it's a real navigation link)
+        if (this.getAttribute('href') === '#') return;
+        
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // DROPDOWN MENU TOGGLE (for mobile and touch devices)
+    var dropdownToggles = navMenu.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = this.closest('.nav-dropdown');
+        if (!parent) return;
+        
+        // Close other open dropdowns at the same level
+        var siblings = parent.parentNode.querySelectorAll('.nav-dropdown.open');
+        siblings.forEach(function(sib) {
+          if (sib !== parent) sib.classList.remove('open');
+        });
+        
+        parent.classList.toggle('open');
+        console.log('[Navbar] Dropdown toggled:', parent.classList.contains('open') ? 'open' : 'closed');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        var openDropdowns = document.querySelectorAll('.nav-dropdown.open');
+        openDropdowns.forEach(function(dd) { dd.classList.remove('open'); });
+      }
+    });
+    
+    console.log('[Navbar] Dropdown handlers initialized for ' + dropdownToggles.length + ' dropdowns');
+    
+    // Phone button functionality (phoneBtn already declared at top of function)
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length > 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // WhatsApp button visibility is now controlled via CSS (siteSettings).
+    // No JS-based desktop hiding — the button is visible on both mobile and desktop by default.
+  });
+})();
+
+</script>
+  
+  <main>
+    <section class="solutions-financing-services-section" data-layout-spec="פתרונות ומימון-services" dir="rtl">
+
+  <!-- Dot-grid decorative background -->
+  <div class="sfs-dot-grid" aria-hidden="true"></div>
+
+  <!-- Intro Header -->
+  <div class="sfs-container">
+    <div class="sfs-intro">
+      <div class="sfs-intro-start">
+        <span class="sfs-label">הפתרונות שלנו</span>
+        <h2 class="sfs-heading">שירותים מקצועיים<br><span class="sfs-heading-accent">מקצה לקצה</span></h2>
+        <div class="sfs-accent-bar" aria-hidden="true"></div>
+      </div>
+      <div class="sfs-intro-end">
+        <p>SUNVEX ENERGY מלווה אתכם בכל שלב – מבדיקת כדאיות כלכלית ראשונית ועד ליצירת הכנסה ממכירת חשמל לחברת החשמל. בחרו את הפתרון המתאים לכם ותנו לשמש לעבוד בשבילכם.</p>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="sfs-grid">
+
+      <!-- Card 1: Residential -->
+      <article class="sfs-card">
+        <div class="sfs-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"></path><rect x="9" y="14" width="6" height="7" rx="1"></rect></svg>
+        </div>
+        <div class="sfs-card-body">
+          <h3>מערכת סולארית לבית פרטי</h3>
+          <p>תכנון והתקנת פאנלים סולאריים לבתים פרטיים – מותאם לגודל הגג, לצריכת החשמל ולתקציב המשפחה. חיסכון בחשבון החשמל מהיום הראשון.</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Business -->
+      <article class="sfs-card">
+        <div class="sfs-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="1"></rect><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path><line x1="12" y1="12" x2="12" y2="17"></line><line x1="9.5" y1="14.5" x2="14.5" y2="14.5"></line></svg>
+        </div>
+        <div class="sfs-card-body">
+          <h3>מערכת סולארית לעסקים</h3>
+          <p>פתרונות אנרגיה סולארית מסחריים לעסקים, מחסנים ומפעלים. הפחתת עלויות תפעול משמעותית ושיפור הרווחיות לאורך זמן.</p>
+        </div>
+      </article>
+
+      <!-- Card 3: Featured – Solar + Storage (spans 2 cols) -->
+      <article class="sfs-card sfs-card--featured">
+        <div class="sfs-featured-inner">
+          <div class="sfs-featured-content">
+            <div class="sfs-card-icon-wrap sfs-card-icon-wrap--featured">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line></svg>
+            </div>
+            <div>
+              <span class="sfs-featured-badge">פתרון מתקדם</span>
+              <h3>מערכת סולארית עם אגירת אנרגיה</h3>
+              <p>שלבו פאנלים סולאריים עם מערכת סוללות חכמה – אחסנו אנרגיה ביום ושתמשו בה בלילה. עצמאות אנרגטית מקסימלית, הגנה מפני הפסקות חשמל, ויתרון כלכלי מובהק לאורך שנים.</p>
+            </div>
+          </div>
+          <div class="sfs-featured-visual" aria-hidden="true">
+            <div class="sfs-featured-sun"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Feasibility -->
+      <article class="sfs-card">
+        <div class="sfs-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><polyline points="3 20 21 20"></polyline></svg>
+        </div>
+        <div class="sfs-card-body">
+          <h3>בדיקת כדאיות כלכלית</h3>
+          <p>ניתוח מקיף של הפוטנציאל הכלכלי של הגג שלכם – תחזית חיסכון, זמן החזר השקעה, והכנסה צפויה ממכירת חשמל לחברת החשמל. ללא התחייבות.</p>
+        </div>
+      </article>
+
+      <!-- Card 5: Financing -->
+      <article class="sfs-card">
+        <div class="sfs-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        </div>
+        <div class="sfs-card-body">
+          <h3>פתרונות מימון נגישים</h3>
+          <p>מגוון מסלולי מימון מותאמים אישית – כולל מימון מלא ללא הון עצמי. נסייע לכם למצוא את ההסדר הפיננסי המשתלם ביותר, כך שהמערכת תשלם את עצמה מהיום הראשון.</p>
+        </div>
+      </article>
+
+      <!-- Card 6: Utility liaison -->
+      <article class="sfs-card">
+        <div class="sfs-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div class="sfs-card-body">
+          <h3>ליווי מלא מול חברת החשמל</h3>
+          <p>אנחנו מטפלים בכל הבירוקרטיה – הגשת בקשות, אישורים, חיבור לרשת וחוזי מכירת חשמל. ליווי מקצועי מלא מול חברת החשמל עד לחיבור הסופי.</p>
+        </div>
+      </article>
+
+      <!-- Card 7: Maintenance & Monitoring -->
+      <article class="sfs-card">
+        <div class="sfs-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path><polyline points="15 6 18 9"></polyline></svg>
+        </div>
+        <div class="sfs-card-body">
+          <h3>תחזוקה, ניטור ושיפור ביצועים</h3>
+          <p>מעקב שוטף אחר ביצועי המערכת, תחזוקה מונעת, ואבחון תקלות מרחוק. מוודאים שהמערכת שלכם מייצרת בקיבולת מרבית לאורך כל חיי המערכת.</p>
+        </div>
+      </article>
+
+    </div>
+    <!-- End Grid -->
+
+  </div>
+  <!-- End Container -->
+
+  <!-- Bottom Divider: Orange band with sun-ray notches -->
+  <div class="sfs-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Sun-ray notch pattern -->
+      <path d="M0,90 L0,48 Q60,38 120,50 Q150,55 180,42 Q210,30 240,45 Q270,58 300,44 Q330,32 360,46 Q390,58 420,43 Q450,30 480,46 Q510,60 540,44 Q570,30 600,46 Q630,60 660,44 Q690,30 720,46 Q750,60 780,44 Q810,30 840,46 Q870,60 900,43 Q930,28 960,45 Q990,58 1020,43 Q1050,30 1080,46 Q1110,60 1140,46 Q1170,34 1200,48 L1200,90 Z" fill="#FFFFFF" opacity="0.18"></path>
+      <path d="M0,90 L0,58 Q100,50 200,60 Q300,68 400,55 Q500,44 600,58 Q700,70 800,56 Q900,44 1000,58 Q1100,70 1200,60 L1200,90 Z" fill="#FFFFFF" opacity="0.28"></path>
+      <path d="M0,90 L0,70 Q200,62 400,72 Q600,80 800,68 Q1000,58 1200,70 L1200,90 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+
+</section>
+
+<section class="solutions-financing-financing-section" data-layout-spec="פתרונות ומימון-financing" dir="rtl">
+  <!-- Dot grid decorative background -->
+  <div class="sff-dot-grid" aria-hidden="true"></div>
+
+  <div class="sff-container">
+    <div class="sff-grid">
+
+      <!-- Text Column (START = RIGHT in RTL) -->
+      <div class="sff-text-col">
+        <div class="sff-badge">
+          <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+          פתרונות מימון נגישים
+        </div>
+
+        <h2 class="sff-heading">מתחילים לחסוך — <br><span class="sff-heading-accent">בלי לשלם הכל מראש</span></h2>
+        <div class="sff-accent-bar" aria-hidden="true"></div>
+
+        <p class="sff-body">SUNVEX ENERGY מלווה אתכם בבחינת פתרונות מימון נגישים, כך שתוכלו להתחיל לנצל את הפוטנציאל של הגג שלכם — מבלי לשאת בעלות מלאה של המערכת מראש. המטרה שלנו היא לבנות יחד תוכנית חכמה שבה ההחזר החודשי מתואם, ככל האפשר, עם ההכנסה הצפויה ממכירת חשמל לחברת החשמל והחיסכון בחשבון החשמל השוטף.</p>
+
+        <p class="sff-body">בדיקת הכדאיות הכלכלית שאנחנו מבצעים כוללת ניתוח מעמיק של גג הנכס שלכם, הערכת תשואה צפויה ובחינת מסלולי מימון מתאימים — כדי שתגיעו להחלטה מושכלת, מבוססת נתונים אמיתיים ולא הבטחות ריקות.</p>
+
+        <div class="sff-disclaimer">
+          <i class="fa-solid fa-circle-info sff-disclaimer-icon" aria-hidden="true"></i>
+          <small>האמור לעיל אינו מהווה התחייבות לתשואה, הכנסה או חיסכון. כל תוצאה תלויה בהתאמת הגג, אישור מימון, תנאי חברת החשמל ומשתנים נוספים. הנתונים מוצגים לצורך המחשה בלבד ומבוססים על בדיקה מקצועית פרטנית.</small>
+        </div>
+
+        <a href="/contact" class="sff-cta-btn">
+          קבלו הצעה למימון מלא
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Image Column (END = LEFT in RTL) -->
+      <div class="sff-image-col">
+        <div class="sff-image-wrapper">
+          <div class="sff-amber-glow" aria-hidden="true"></div>
+          <img data-placeholder="solutions-financing-financing-image-1" data-context="An Israeli family of three — parents and a young adult child — seated at a bright kitchen table with a solar energy consultant. The consultant, dressed professionally, is pointing to printed financial plans and a tablet screen showing solar panel cost-benefit projections. The atmosphere is warm, reassuring and collaborative. Natural daylight streams through a window. The setting feels like a real Israeli home. The mood is consultative, trustworthy, and optimistic." width="600" height="450" src="/assets/site-solutions-financing-financing-image-1.webp" alt="יועץ SUNVEX ENERGY מציג לבני משפחה ישראלית תוכנית מימון לפאנלים סולאריים" class="sff-main-image">
+          <div class="sff-image-badge">
+            <div class="sff-badge-icon"><i class="fa-solid fa-solar-panel" aria-hidden="true"></i></div>
+            <div class="sff-badge-text">
+              <strong>ליווי מלא</strong>
+              <small>מהתכנון ועד חברת החשמל</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom curved divider into next dark section -->
+  <div class="sff-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,50 Q150,10 300,40 Q450,70 600,30 Q750,0 900,35 Q1050,65 1200,25 L1200,80 Z" fill="#12305F"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="solutions-financing-capabilities-section" data-layout-spec="פתרונות ומימון-capabilities" dir="rtl">
+  <!-- Technical background pattern -->
+  <div class="sfcs-bg-pattern" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="sfcs-circuit" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="40" x2="80" y2="40" stroke="rgba(255,255,255,0.06)" stroke-width="1"></line>
+          <line x1="40" y1="0" x2="40" y2="80" stroke="rgba(255,255,255,0.06)" stroke-width="1"></line>
+          <circle cx="40" cy="40" r="3" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"></circle>
+          <circle cx="0" cy="0" r="2" fill="rgba(255,255,255,0.05)"></circle>
+          <circle cx="80" cy="0" r="2" fill="rgba(255,255,255,0.05)"></circle>
+          <circle cx="0" cy="80" r="2" fill="rgba(255,255,255,0.05)"></circle>
+          <circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.05)"></circle>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#sfcs-circuit)"></rect>
+    </svg>
+  </div>
+
+  <!-- Decorative accent glow -->
+  <div class="sfcs-glow-accent" aria-hidden="true"></div>
+
+  <div class="sfcs-container">
+    <!-- Section header -->
+    <div class="sfcs-header">
+      <div class="sfcs-label-tag">יכולות מקצועיות</div>
+      <h2 class="sfcs-title">ארבעה עמודי התווך של השירות שלנו</h2>
+      <div class="sfcs-title-underline" aria-hidden="true"></div>
+      <p class="sfcs-subtitle">מתכנון מדויק לפי צריכת החשמל שלכם ועד ליווי מלא מול חברת החשמל — SUNVEX ENERGY מספקת פתרון הנדסי שלם, מקצה לקצה.</p>
+    </div>
+
+    <!-- Capability pillars -->
+    <div class="sfcs-pillars">
+
+      <!-- Pillar 1: Planning by consumption -->
+      <article class="sfcs-pillar">
+        <div class="sfcs-pillar-emblem">
+          <svg data-element-type="icon" data-icon-type="svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="8" stroke="currentColor" stroke-width="2"></circle>
+            <line x1="18" y1="2" x2="18" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="18" y1="30" x2="18" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="2" y1="18" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="30" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="6.34" y1="6.34" x2="9.17" y2="9.17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="26.83" y1="26.83" x2="29.66" y2="29.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="29.66" y1="6.34" x2="26.83" y2="9.17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="9.17" y1="26.83" x2="6.34" y2="29.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <circle cx="18" cy="18" r="3" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <div class="sfcs-pillar-content">
+          <h3 class="sfcs-pillar-title">תכנון לפי צריכה בפועל</h3>
+          <p class="sfcs-pillar-text">אנחנו מנתחים את חשבונות החשמל שלכם ומתכננים מערכת סולארית שמותאמת בדיוק לדפוסי הצריכה של הבית — ללא ייצור עודף ובלא מחסור. בדיקת כדאיות כלכלית מלאה לפני כל החלטה.</p>
+          <div class="sfcs-pillar-accent" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <!-- Pillar 2: Engineering precision -->
+      <article class="sfcs-pillar">
+        <div class="sfcs-pillar-emblem">
+          <svg data-element-type="icon" data-icon-type="svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="20" width="28" height="12" rx="2" stroke="currentColor" stroke-width="2"></rect>
+            <rect x="8" y="24" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
+            <rect x="16" y="24" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
+            <rect x="24" y="24" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
+            <path d="M4 20 L18 8 L32 20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+            <line x1="14" y1="4" x2="14" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="22" y1="4" x2="22" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="14" y1="4" x2="22" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <div class="sfcs-pillar-content">
+          <h3 class="sfcs-pillar-title">דיוק הנדסי בתכנון המערכת</h3>
+          <p class="sfcs-pillar-text">כל פרויקט מלווה על ידי מהנדסים מוסמכים שמחשבים זוויות, עומסים, גיאוגרפיה ותנאי גג בצורה מדויקת. התוצאה: מערכת סולארית שמייצרת את המקסימום האפשרי בכל עונות השנה.</p>
+          <div class="sfcs-pillar-accent" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <!-- Pillar 3: Authority process guidance -->
+      <article class="sfcs-pillar">
+        <div class="sfcs-pillar-emblem">
+          <svg data-element-type="icon" data-icon-type="svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="4" width="24" height="28" rx="3" stroke="currentColor" stroke-width="2"></rect>
+            <line x1="11" y1="12" x2="25" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="11" y1="17" x2="25" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="11" y1="22" x2="19" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <circle cx="26" cy="27" r="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"></circle>
+            <path d="M23 27 L25.5 29.5 L29 25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="sfcs-pillar-content">
+          <h3 class="sfcs-pillar-title">ליווי מלא מול חברת החשמל</h3>
+          <p class="sfcs-pillar-text">הבירוקרטיה עלינו. אנחנו מטפלים בכל ההגשות, האישורים, והתיאומים מול הרשויות ומול חברת החשמל — כולל חיבור למד דו-כיווני ורישום להכנסה ממכירת חשמל. אתם רק מחכים לחיסכון.</p>
+          <div class="sfcs-pillar-accent" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <!-- Pillar 4: Ongoing optimization -->
+      <article class="sfcs-pillar">
+        <div class="sfcs-pillar-emblem">
+          <svg data-element-type="icon" data-icon-type="svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 4 C10.268 4 4 10.268 4 18 C4 25.732 10.268 32 18 32 C25.732 32 32 25.732 32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M28 4 L32 8 L28 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M32 8 L24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <polyline points="12,18 16,22 24,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div class="sfcs-pillar-content">
+          <h3 class="sfcs-pillar-title">אופטימיזציה שוטפת לאחר ההפעלה</h3>
+          <p class="sfcs-pillar-text">השירות לא מסתיים בהתקנה. אנחנו עוקבים אחרי ביצועי המערכת, מספקים דוחות ייצור שוטפים, ומבצעים אופטימיזציה לאורך זמן — כדי שתמשיכו לחסוך בחשבון החשמל שנה אחרי שנה.</p>
+          <div class="sfcs-pillar-accent" aria-hidden="true"></div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom stats bar -->
+    <div class="sfcs-stats-bar">
+      <div class="sfcs-stat">
+        <span class="sfcs-stat-number">500+</span>
+        <span class="sfcs-stat-label">פרויקטים הושלמו</span>
+      </div>
+      <div class="sfcs-stat-divider" aria-hidden="true"></div>
+      <div class="sfcs-stat">
+        <span class="sfcs-stat-number">98%</span>
+        <span class="sfcs-stat-label">שביעות רצון לקוחות</span>
+      </div>
+      <div class="sfcs-stat-divider" aria-hidden="true"></div>
+      <div class="sfcs-stat">
+        <span class="sfcs-stat-number">15+</span>
+        <span class="sfcs-stat-label">שנות ניסיון בתחום</span>
+      </div>
+      <div class="sfcs-stat-divider" aria-hidden="true"></div>
+      <div class="sfcs-stat">
+        <span class="sfcs-stat-number">100%</span>
+        <span class="sfcs-stat-label">ליווי מלא מול חברת החשמל</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom divider: layered gradient edge with green accent line -->
+  <div class="sfcs-divider-wrapper" aria-hidden="true">
+    <div class="sfcs-green-accent-line"></div>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sfcs-divider-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#12305F" stop-opacity="0"></stop>
+          <stop offset="100%" stop-color="#F8F8F6" stop-opacity="1"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,72 L0,28 Q150,14 300,22 T600,16 Q750,10 900,20 T1200,18 L1200,72 Z" fill="#F8F8F6"></path>
+      <path d="M0,72 L0,36 Q150,22 300,30 T600,24 Q750,18 900,28 T1200,26 L1200,72 Z" fill="#F8F8F6"></path>
+    </svg>
+  </div>
+
+</section>
+
+<section class="solutions-financing-faq-section" data-layout-spec="פתרונות ומימון-faq" dir="rtl">
+  <div class="faq-container">
+    <div class="faq-header">
+      <span class="faq-label">שאלות ותשובות</span>
+      <h2 class="faq-title">כל מה שרציתם לדעת על מערכת סולארית</h2>
+      <p class="faq-subtitle">אנחנו מאמינים בשקיפות מלאה. כאן תמצאו תשובות ישירות לשאלות הנפוצות ביותר — כולל הדברים שחשוב לדעת לפני שמחליטים.</p>
+      <div class="faq-accent-bar"></div>
+    </div>
+
+    <div class="faq-grid">
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">מי עשוי להתאים להתקנת מערכת סולארית?</h3>
+          <p class="faq-answer">בעלי נכסים עם גג זמין — בית פרטי, עסק, מבנה חקלאי או מסחרי — עשויים להתאים. הגורמים המשפיעים כוללים כיווניות הגג, צל, שטח פנוי ומצב הגג. בדיקת ההתאמה שלנו היא חינמית וללא התחייבות.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">מה משפיע על הכדאיות הכלכלית של המערכת?</h3>
+          <p class="faq-answer">בדיקת כדאיות כלכלית תלויה בגובה חשבון החשמל הנוכחי שלכם, בגודל המערכת המתאימה, במחיר הרכישה, ובתנאי ההסכם מול חברת החשמל. כל לקוח מקבל הערכה אישית — אנחנו לא עובדים עם הבטחות גורפות.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">האם פתרונות המימון כפופים לאישור אשראי?</h3>
+          <p class="faq-answer">חלק מפתרונות המימון כרוכים בבדיקת אשראי, כמו כל הלוואה בנקאית. אנחנו עובדים עם מספר גופי מימון ומנסים להתאים את הפתרון הנכון לכל לקוח — כולל אפשרויות שאינן תלויות באישור אשראי מורכב.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">כמה זמן לוקח התהליך מהחלטה להפעלה?</h3>
+          <p class="faq-answer">התהליך כולל תכנון, אישורים, התקנה וחיבור לרשת. משך הזמן משתנה בהתאם לסוג הנכס ולאזור, ויכול לנוע בין מספר שבועות לחודשים. נעדכן אתכם בכל שלב ונלווה אתכם עד לחיבור המלא.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">כיצד מתנהל הממשק מול חברת החשמל?</h3>
+          <p class="faq-answer">ליווי מלא מול חברת החשמל הוא חלק בלתי נפרד מהשירות שלנו. אנחנו מטפלים בכל הבירוקרטיה: הגשת בקשות, קבלת אישורים, חיבור לרשת ורישום להסכם קנייה של עודפי חשמל — כך שאתם לא צריכים להתעסק עם זה.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"></path></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">מה הציפיות הריאליות מהכנסה ממכירת חשמל?</h3>
+          <p class="faq-answer">הכנסה ממכירת חשמל לחברת החשמל תלויה בתעריף הרכישה הנוכחי, בגודל המערכת ובצריכה הביתית. אנחנו מסבירים את המספרים בצורה שקופה ולא מבטיחים מספרים שאינם מבוססים על נתוני הנכס הספציפי שלכם.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">האם יש אחריות על המערכת לאחר ההתקנה?</h3>
+          <p class="faq-answer">כן. הפאנלים והמהפכים מגיעים עם אחריות יצרן, ואנחנו מספקים אחריות עבודה על ההתקנה. בנוסף, אנחנו מציעים שירות תחזוקה שוטף כדי לוודא שהמערכת פועלת בצורה מיטבית לאורך שנים.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <div class="faq-card-content">
+          <h3 class="faq-question">האם ניתן לבדוק התאמה מבלי להתחייב?</h3>
+          <p class="faq-answer">בהחלט. בדיקת ההתאמה שלנו היא חינמית ואינה מחייבת לשום דבר. נבצע הערכה ראשונית של הנכס, נציג לכם את הנתונים, ואתם מחליטים אם להמשיך — בלי לחץ ובלי מחויבות מוקדמת.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="faq-cta-strip">
+      <p class="faq-cta-text">יש לכם שאלה שלא מצאתם כאן? הצוות שלנו ישמח לענות.</p>
+      <a href="#contact" class="btn-primary faq-cta-btn">
+        <i class="fa-solid fa-phone-flip" aria-hidden="true"></i>
+        דברו איתנו
+      </a>
+    </div>
+  </div>
+
+  <div class="faq-divider-wrapper" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="faqFadeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F8F8F6" stop-opacity="0"></stop>
+          <stop offset="100%" stop-color="#12305F" stop-opacity="1"></stop>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="60" fill="url(#faqFadeGrad)"></rect>
+    </svg>
+  </div>
+
+</section>
+
+<section class="solutions-financing-conversion-section" data-layout-spec="פתרונות ומימון-conversion" dir="rtl">
+  <!-- Decorative solar rays -->
+  <div class="sfcs-rays-decoration" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <g opacity="0.10">
+        <line x1="300" y1="200" x2="0" y2="0" stroke="#FFB23A" stroke-width="2"></line>
+        <line x1="300" y1="200" x2="100" y2="0" stroke="#FFB23A" stroke-width="1.5"></line>
+        <line x1="300" y1="200" x2="200" y2="0" stroke="#FFB23A" stroke-width="1.5"></line>
+        <line x1="300" y1="200" x2="300" y2="0" stroke="#FFB23A" stroke-width="1.5"></line>
+        <line x1="300" y1="200" x2="400" y2="0" stroke="#FFB23A" stroke-width="1.5"></line>
+        <line x1="300" y1="200" x2="500" y2="0" stroke="#FFB23A" stroke-width="1.5"></line>
+        <line x1="300" y1="200" x2="600" y2="0" stroke="#FFB23A" stroke-width="2"></line>
+        <line x1="300" y1="200" x2="0" y2="100" stroke="#FFB23A" stroke-width="1"></line>
+        <line x1="300" y1="200" x2="600" y2="100" stroke="#FFB23A" stroke-width="1"></line>
+        <line x1="300" y1="200" x2="0" y2="200" stroke="#FFB23A" stroke-width="1"></line>
+        <line x1="300" y1="200" x2="600" y2="200" stroke="#FFB23A" stroke-width="1"></line>
+        <line x1="300" y1="200" x2="0" y2="300" stroke="#FFB23A" stroke-width="1"></line>
+        <line x1="300" y1="200" x2="600" y2="300" stroke="#FFB23A" stroke-width="1"></line>
+        <line x1="300" y1="200" x2="0" y2="400" stroke="#FFB23A" stroke-width="1.5"></line>
+        <line x1="300" y1="200" x2="600" y2="400" stroke="#FFB23A" stroke-width="1.5"></line>
+        <circle cx="300" cy="200" r="40" stroke="#FFB23A" stroke-width="1.5" fill="none"></circle>
+        <circle cx="300" cy="200" r="80" stroke="#FFB23A" stroke-width="1" fill="none" opacity="0.6"></circle>
+        <circle cx="300" cy="200" r="130" stroke="#FFB23A" stroke-width="0.8" fill="none" opacity="0.4"></circle>
+      </g>
+    </svg>
+  </div>
+
+  <div class="sfcs-container">
+    <!-- Badge -->
+    <div class="sfcs-badge">
+      <i class="fas fa-solar-panel"></i>
+      <span>בדיקת כדאיות כלכלית ללא עלות</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="sfcs-heading">מוכנים לגלות כמה הגג שלכם שווה?</h2>
+
+    <!-- Orange underline accent -->
+    <div class="sfcs-heading-accent" aria-hidden="true"></div>
+
+    <!-- Paragraph -->
+    <p class="sfcs-description">קבלו הערכה מקצועית ואישית ללא התחייבות — הצוות שלנו יבדוק את התאמת הנכס שלכם, יסביר על פתרונות המימון הזמינים, וילווה אתכם בכל שלב מול חברת החשמל. הצעד הראשון לחיסכון בחשבון החשמל מתחיל בשיחה אחת.</p>
+
+    <!-- Trust indicators -->
+    <div class="sfcs-trust-row">
+      <div class="sfcs-trust-item">
+        <i class="fas fa-check-circle"></i>
+        <span>ללא התחייבות</span>
+      </div>
+      <div class="sfcs-trust-item">
+        <i class="fas fa-check-circle"></i>
+        <span>ייעוץ מקצועי חינם</span>
+      </div>
+      <div class="sfcs-trust-item">
+        <i class="fas fa-check-circle"></i>
+        <span>ליווי מלא מול חברת החשמל</span>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="sfcs-cta-group">
+      <a href="/contact" class="sfcs-btn-primary">
+        <i class="fas fa-clipboard-check"></i>
+        בדיקת התאמה חינם
+      </a>
+      <a href="/contact" class="sfcs-btn-outline">
+        <i class="fas fa-file-invoice-dollar"></i>
+        קבלו הצעה למימון מלא
+      </a>
+    </div>
+
+    <!-- Small reassurance note -->
+    <p class="sfcs-footnote">אלפי משפחות בישראל כבר עשו את הצעד — הגיע תורכם</p>
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer" dir="rtl">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Company Info -->
+        <div class="footer-col footer-col--brand">
+          <div class="footer-logo-wrap">
+            <img src="/assets/sunvex-energy-logo.webp" alt="SUNVEX ENERGY" class="logo">
+          </div>
+          <p class="footer-tagline">מובילים את מהפכת האנרגיה הנקייה בישראל — פתרונות סולאריים חכמים לבית ולעסק.</p>
+          <div class="footer-social">
+            <a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading">
+            <span class="footer-heading-accent"></span>
+            ניווט מהיר
+          </h3>
+          <ul class="footer-links">
+            <li><a href="/">בית</a></li>
+            <li><a href="/about">אודות</a></li>
+            <li><a href="/solutions-financing">פתרונות ומימון</a></li>
+            <li><a href="/contact">צור קשר</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h3 class="footer-heading">
+            <span class="footer-heading-accent"></span>
+            יצירת קשר
+          </h3>
+          <ul class="footer-contact">
+            <li>
+              <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+              <span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fas fa-phone"></i></span>
+              <span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span>
+            </li>
+            <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+              <span class="contact-text">[business_address]</span></a></li>
+          </ul>
+        </div>
+
+        <!-- CTA / Extra -->
+        <div class="footer-col footer-col--cta">
+          <h3 class="footer-heading">
+            <span class="footer-heading-accent"></span>
+            קבל הצעת מחיר
+          </h3>
+          <p class="footer-cta-text">מעוניינים לעבור לאנרגיה סולארית? השאירו פרטים ונחזור אליכם בהקדם.</p>
+          <a href="/contact" class="footer-cta-btn">לפרטים נוספים <i class="fas fa-arrow-left"></i></a>
+          <div class="footer-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>מורשה ומוסמך</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="footer-divider"></div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">© 2026 SUNVEX ENERGY. כל הזכויות שמורות.</p>
+        <div class="footer-legal">
+          <a href="/privacy">מדיניות פרטיות</a>
+          <span class="footer-legal-sep"></span>
+          <a href="/terms">תנאי שימוש</a>
+          <span class="footer-legal-sep"></span>
+          <a href="/accessibility">נגישות</a>
+          <span class="footer-legal-sep"></span>
+          <a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+
+    <script id="zappy-navbar-scroll-effect">
+    (function(){
+      var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');
+      var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');
+      if(!nb)return;
+      var fb='rgba(248,248,246,0.85)';
+      var th=60;
+      var rs=getComputedStyle(document.documentElement);
+      var td=rs.getPropertyValue('--text-dark').trim()||'#1a1a1a';
+      var tl=rs.getPropertyValue('--text-light').trim()||'#ffffff';
+      var st=true?td:tl;
+      nb.style.transition='background 0.3s ease,backdrop-filter 0.3s ease,-webkit-backdrop-filter 0.3s ease,box-shadow 0.3s ease';
+      if(cm)cm.style.transition='background 0.3s ease,backdrop-filter 0.3s ease,-webkit-backdrop-filter 0.3s ease';
+      var neSel='a,.navbar-brand,.navbar-brand a,.dropdown-toggle,.mobile-toggle,.phone-header-btn,.mobile-hamburger-btn,.mobile-close-btn,.mobile-submenu-toggle,.nav-link';
+      var skipCls=['cart-link','login-link','nav-search-toggle','search-toggle'];
+      function sTC(c,clr){var els=c.querySelectorAll(neSel);for(var i=0;i<els.length;i++){var sk=false;if(els[i].closest('.sub-menu')||els[i].closest('.dropdown-menu')){sk=true;}for(var j=0;j<skipCls.length;j++){if(els[i].classList.contains(skipCls[j])){sk=true;break;}}if(!sk)els[i].style.setProperty('color',clr,'important');}}
+      function cTC(c){var els=c.querySelectorAll(neSel);for(var i=0;i<els.length;i++){if(els[i].closest('.sub-menu')||els[i].closest('.dropdown-menu'))continue;els[i].style.removeProperty('color');}}
+      function applyScrolled(){
+        nb.classList.add('scrolled');
+        if(window.innerWidth>768){
+          nb.style.setProperty('--frosted-text',st);
+          nb.style.setProperty('background-image','none','important');
+          nb.style.setProperty('background-color',fb,'important');
+          nb.style.backdropFilter='blur(12px)';nb.style.webkitBackdropFilter='blur(12px)';nb.style.boxShadow='0 2px 16px rgba(0,0,0,0.12)';
+          sTC(nb,st);
+        }
+        if(cm){cm.classList.add('scrolled');if(window.innerWidth>768){cm.style.setProperty('background',fb,'important');cm.style.setProperty('backdrop-filter','blur(12px)','important');cm.style.setProperty('-webkit-backdrop-filter','blur(12px)','important');sTC(cm,st);}}
+      }
+      function onS(){
+        if(window._zappyNavNoDarkHero) return;
+        if(window.innerWidth<=768){nb.classList.remove('scrolled');cTC(nb);if(cm){cm.classList.remove('scrolled');cTC(cm);}return;}
+        var y=window.scrollY||window.pageYOffset;
+        if(y>th){
+          nb.classList.add('scrolled');nb.style.setProperty('background-color',fb,'important');nb.style.setProperty('background-image','none','important');
+          nb.style.setProperty('--frosted-text',st);nb.style.backdropFilter='blur(12px)';nb.style.webkitBackdropFilter='blur(12px)';nb.style.boxShadow='0 2px 16px rgba(0,0,0,0.12)';
+          sTC(nb,st);
+          if(cm){cm.classList.add('scrolled');cm.style.setProperty('background',fb,'important');cm.style.setProperty('backdrop-filter','blur(12px)','important');cm.style.setProperty('-webkit-backdrop-filter','blur(12px)','important');sTC(cm,st);}
+        }else{
+          nb.classList.remove('scrolled');nb.style.setProperty('background-color','transparent','important');nb.style.removeProperty('background-image');
+          nb.style.removeProperty('--frosted-text');nb.style.backdropFilter='none';nb.style.webkitBackdropFilter='none';nb.style.boxShadow='none';
+          cTC(nb);
+          if(cm){cm.classList.remove('scrolled');cm.style.setProperty('background','transparent','important');cm.style.setProperty('backdrop-filter','none','important');cm.style.setProperty('-webkit-backdrop-filter','none','important');cTC(cm);}
+        }
+      }
+      function sLum(rv,gv,bv){rv/=255;gv/=255;bv/=255;rv=rv<=0.03928?rv/12.92:Math.pow((rv+0.055)/1.055,2.4);gv=gv<=0.03928?gv/12.92:Math.pow((gv+0.055)/1.055,2.4);bv=bv<=0.03928?bv/12.92:Math.pow((bv+0.055)/1.055,2.4);return 0.2126*rv+0.7152*gv+0.0722*bv;}
+      window.addEventListener('scroll',onS,{passive:true});
+      window.addEventListener('resize',onS,{passive:true});
+      onS();
+      var heroEl=document.querySelector('section[class*="hero"],[data-hero-type],main>section:first-child');
+      var hasDH=false;
+      if(heroEl){var hCs=getComputedStyle(heroEl);var hBI=hCs.backgroundImage;if(hBI&&hBI!=='none'){if(hBI.indexOf('url(')!==-1){var hM2=hCs.backgroundColor.match(/\d+/g);if(hM2&&hM2.length>=3){hasDH=sLum(parseInt(hM2[0]),parseInt(hM2[1]),parseInt(hM2[2]))<0.4;}else{hasDH=true;}}else if(hBI.indexOf('gradient')!==-1){var cM=hBI.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/g);if(cM&&cM.length>0){var tLm=0;for(var ci=0;ci<cM.length;ci++){var pts=cM[ci].match(/\d+/g);tLm+=sLum(parseInt(pts[0]),parseInt(pts[1]),parseInt(pts[2]));}hasDH=(tLm/cM.length)<0.4;}else{hasDH=true;}}else{hasDH=true;}}else{var hM=hCs.backgroundColor.match(/\d+/g);if(hM&&hM.length>=3){hasDH=sLum(parseInt(hM[0]),parseInt(hM[1]),parseInt(hM[2]))<0.4;}}}
+      if(!hasDH){window.removeEventListener('scroll',onS);window.removeEventListener('resize',onS);applyScrolled();window._zappyNavNoDarkHero=true;}
+    })();
+    </script>
+</body>
+</html>
