@@ -7,33 +7,33 @@
 ## Pages
 
 ### בית
-https://example.com
+https://sunvex-energy.zappy5.app
 רוצה לחסוך בחשבון החשמל ולהרוויח מהגג שלך? SUNVEX ENERGY מציעה בדיקת כדאיות כלכלית חינמית, התקנה מקצועית וליווי מלא. צור קשר עוד היום!
 
 ### אודות
-https://example.com/about
+https://sunvex-energy.zappy5.app/about
 SUNVEX ENERGY נוסדה כדי להנגיש אנרגיה סולארית לכל בית בישראל. היכר את הצוות המקצועי שמלווה אלפי משפחות לעצמאות אנרגטית ולחיסכון כלכלי משמעותי.
 
 ### פתרונות ומימון
-https://example.com/solutions-financing
+https://sunvex-energy.zappy5.app/solutions-financing
 מערכת סולארית עם אגירת אנרגיה, פתרונות מימון נגישים והכנסה ממכירת חשמל לחברת החשמל — כל מה שצריך כדי להפוך את הגג לנכס רווחי. בדוק את האפשרויות שלך!
 
 ### צור קשר
-https://example.com/contact
+https://sunvex-energy.zappy5.app/contact
 מוכן לדעת כמה הגג שלך יכול להכניס? צור קשר עם מומחי SUNVEX ENERGY לבדיקת כדאיות כלכלית ללא עלות, עם ליווי מלא מול חברת החשמל מהיום הראשון ועד החיבור.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://sunvex-energy.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://sunvex-energy.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://sunvex-energy.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -43,8 +43,8 @@ Information about WCAG compliance and accessibility features.
 - (No contact details configured yet.)
 
 ### Contact form
-- URL: https://example.com
-- Endpoint: https://example.com/api/email/contact-form
+- URL: https://sunvex-energy.zappy5.app
+- Endpoint: https://sunvex-energy.zappy5.app/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
@@ -74,6 +74,6 @@ SUNVEX ENERGY is an Israeli solar and renewable energy company with a clear visi
 
 # Machine-readable feeds
 
-- Sitemap (XML): https://example.com/sitemap.xml
-- Robots: https://example.com/robots.txt
-- Flattened page text (for LLMs): https://example.com/llms-full.txt
+- Sitemap (XML): https://sunvex-energy.zappy5.app/sitemap.xml
+- Robots: https://sunvex-energy.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://sunvex-energy.zappy5.app/llms-full.txt
