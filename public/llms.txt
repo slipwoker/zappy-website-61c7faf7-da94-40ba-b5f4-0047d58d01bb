@@ -40,7 +40,7 @@ Information about WCAG compliance and accessibility features.
 
 ## How to Contact Us
 
-- Email: info@sunves.co.il
+- Email: info@sunvex.co.il
 - Phone: 0502846662
 - Phone (tel): tel:0502846662
 - Address: מנחם בגין 7, רמת גן
