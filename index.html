@@ -767,9 +767,12 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" data-zappy-content-align="top-right" style="; position: relative; overflow: hidden;">
-<div class="hero-video-background">
-  <div class="hero-video-overlay"></div>
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" data-zappy-content-align="top-right" style="position: relative; overflow: hidden; --zappy-bg-overlay: rgba(10, 30, 70, 0.53)" data-zappy-bg-type="video" data-zappy-bg-color="" data-zappy-bg-image="" data-zappy-bg-overlay-color="#0a1e46" data-zappy-bg-overlay-opacity="53" data-zappy-bg-video-type="mp4" data-zappy-bg-video-url="assets/hero-video-1778182262146.mp4"><div class="zappy-section-video-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"><div class="zappy-section-video-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(10, 30, 70, 0.53);pointer-events:none;"></div><video class="zappy-section-video" autoplay="" muted="" loop="" playsinline="" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%, -50%);object-fit:cover;z-index:0;">
+  <source src="/assets/hero-video-1778182262146.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+<div class="hero-video-background" style="display: none" data-zappy-original-bg="hidden">
+  <div class="hero-video-overlay" style="display: none" data-zappy-original-bg="hidden"></div>
   <video class="hero-video" autoplay="" muted="" loop="" playsinline="">
     <source src="/assets/hero-video-1778182262146.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -777,15 +780,15 @@
   <img class="hero-video-fallback" src="/assets/site-index-hero-image-1.webp" alt="Hero background" loading="lazy">
 </div>
   <!-- Background Image Layer -->
-  <div class="index-hero-bg-wrapper">
+  <div class="index-hero-bg-wrapper" style="display: none" data-zappy-original-bg="hidden">
     <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Aerial golden-hour photograph of a sunlit Israeli residential rooftop covered with modern blue solar panels, warm amber sunlight casting long shadows across the panels, surrounding neighborhood visible with similar houses, clear sky with soft clouds, Mediterranean architectural style, photorealistic, bright and aspirational mood, professional real estate photography quality" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="גג בית ישראלי עם פאנלים סולאריים בשעת הזהב" class="index-hero-bg-img hero-original-image-hidden" data-hero-background="true" data-element-type="image" data-element-id="img-1778147504544-l5gz8y805" style="; display: none !important;">
   </div>
 
   <!-- Scrim Overlay -->
-  <div class="index-hero-scrim" aria-hidden="true"></div>
+  <div class="index-hero-scrim" aria-hidden="true" style="display: none" data-zappy-original-bg="hidden"></div>
 
   <!-- Solar Rays Decorative Motif -->
-  <svg class="index-hero-solar-rays" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMin meet">
+  <svg class="index-hero-solar-rays" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMin meet" style="position: relative; z-index: 2">
     <g opacity="0.12" fill="#F7941D">
       <line x1="500" y1="0" x2="0" y2="500" stroke="#F7941D" stroke-width="2" opacity="0.5"></line>
       <line x1="500" y1="0" x2="50" y2="500" stroke="#F7941D" stroke-width="2" opacity="0.5"></line>
@@ -803,7 +806,7 @@
   </svg>
 
   <!-- Main Content -->
-  <div class="index-hero-container" data-zappy-align-target="true" >
+  <div class="index-hero-container" data-zappy-align-target="true" style="position: relative; z-index: 2">
     <div class="index-hero-content">
       <!-- Label -->
       <p ><span class="index-hero-label" >SUNVEX ENERGY — אנרגיה סולארית ישראלית</span>
