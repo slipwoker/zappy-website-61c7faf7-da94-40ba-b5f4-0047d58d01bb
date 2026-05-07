@@ -9691,6 +9691,10 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
     padding: 22px 16px;
   }
 }
+
+.navbar .logo {
+  filter: brightness(0) invert(1);
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
