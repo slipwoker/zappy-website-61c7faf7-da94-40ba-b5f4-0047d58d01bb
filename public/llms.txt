@@ -40,10 +40,10 @@ Information about WCAG compliance and accessibility features.
 
 ## How to Contact Us
 
-- Email: info@sunvex.co.il
+- Email: info@sunves.co.il
 - Phone: 0502846662
 - Phone (tel): tel:0502846662
-- Address: Menachem Begin 7, Ramat Gan, Israel
+- Address: מנחם בגין 7, רמת גן
 
 ### Contact form
 - URL: https://sunvex.co.il
