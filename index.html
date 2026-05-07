@@ -767,10 +767,18 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" data-zappy-content-align="top-right">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" data-zappy-content-align="top-right" style="; position: relative; overflow: hidden;">
+<div class="hero-video-background">
+  <div class="hero-video-overlay"></div>
+  <video class="hero-video" autoplay="" muted="" loop="" playsinline="">
+    <source src="/assets/hero-video-1778182262146.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <img class="hero-video-fallback" src="/assets/site-index-hero-image-1.webp" alt="Hero background" loading="lazy">
+</div>
   <!-- Background Image Layer -->
   <div class="index-hero-bg-wrapper">
-    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Aerial golden-hour photograph of a sunlit Israeli residential rooftop covered with modern blue solar panels, warm amber sunlight casting long shadows across the panels, surrounding neighborhood visible with similar houses, clear sky with soft clouds, Mediterranean architectural style, photorealistic, bright and aspirational mood, professional real estate photography quality" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="גג בית ישראלי עם פאנלים סולאריים בשעת הזהב" class="index-hero-bg-img" data-hero-background="true" data-element-type="image" data-element-id="img-1778147504544-l5gz8y805">
+    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Aerial golden-hour photograph of a sunlit Israeli residential rooftop covered with modern blue solar panels, warm amber sunlight casting long shadows across the panels, surrounding neighborhood visible with similar houses, clear sky with soft clouds, Mediterranean architectural style, photorealistic, bright and aspirational mood, professional real estate photography quality" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="גג בית ישראלי עם פאנלים סולאריים בשעת הזהב" class="index-hero-bg-img hero-original-image-hidden" data-hero-background="true" data-element-type="image" data-element-id="img-1778147504544-l5gz8y805" style="; display: none !important;">
   </div>
 
   <!-- Scrim Overlay -->
@@ -795,16 +803,16 @@
   </svg>
 
   <!-- Main Content -->
-  <div class="index-hero-container" data-zappy-align-target="true" style="">
+  <div class="index-hero-container" data-zappy-align-target="true" >
     <div class="index-hero-content">
       <!-- Label -->
-      <p style=""><span class="index-hero-label" style="">SUNVEX ENERGY — אנרגיה סולארית ישראלית</span>
+      <p ><span class="index-hero-label" >SUNVEX ENERGY — אנרגיה סולארית ישראלית</span>
 
       
-      </p><!-- H1 --><h1 class="index-hero-h1" style="">הגג שלכם יכול<br><span class="index-hero-accent" style="color: rgb(18, 48, 95) !important;">להפוך למקור הכנסה</span></h1>
+      </p><!-- H1 --><h1 class="index-hero-h1" >הגג שלכם יכול<br><span class="index-hero-accent" style="color: rgb(18, 48, 95) !important;">להפוך למקור הכנסה</span></h1>
 
       <!-- Supporting Subtitle -->
-      <h3 class="index-hero-subtitle" style="">SUNVEX ENERGY עוזרת למשפחות ובעלי נכסים בישראל לנצל את אנרגיית השמש — לחסוך בהוצאות החשמל, לייצר הכנסה פוטנציאלית מחברת החשמל, ולהתקדם לעתיד ירוק וחכם יותר. בכפוף לבדיקת התאמה, מצב הגג וצריכת החשמל.</h3>
+      <h3 class="index-hero-subtitle" >SUNVEX ENERGY עוזרת למשפחות ובעלי נכסים בישראל לנצל את אנרגיית השמש — לחסוך בהוצאות החשמל, לייצר הכנסה פוטנציאלית מחברת החשמל, ולהתקדם לעתיד ירוק וחכם יותר. בכפוף לבדיקת התאמה, מצב הגג וצריכת החשמל.</h3>
 
       <!-- CTA Buttons -->
       <div class="index-hero-ctas">
@@ -1504,7 +1512,7 @@
 
 <section id="layout-1778147231902" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0; direction: rtl;" data-component-id="video-text-left">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-  <div class="video-text-left-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
+  <div class="video-text-left-grid" style="--zappy-grid-cols: repeat(auto-fit, minmax(300px, 1fr)); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;" data-zappy-explicit-columns="true">
     <div>
       <h2 style="font-size: 32px; font-weight: 700; color: #1F2937; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif;">כותרת שלך כאן</h2>
       <p style="font-size: 18px; line-height: 1.6; color: #1F2937; opacity: 0.8; font-family: system-ui, -apple-system, sans-serif;">הוסף את תוכן הטקסט שלך כאן. זהו טקסט ממלא מקום שניתן לערוך.</p>
@@ -1557,7 +1565,7 @@
             <span class="footer-heading-accent"></span>
             ניווט מהיר
           </h3>
-          <ul class="footer-links" style=""><li><a href="/">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/solutions-financing">פתרונות ומימון</a></li><li><a href="/contact">צור קשר</a></li></ul>
+          <ul class="footer-links" ><li><a href="/">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/solutions-financing">פתרונות ומימון</a></li><li><a href="/contact">צור קשר</a></li></ul>
         </div>
 
         <!-- Contact Info -->
@@ -1566,12 +1574,12 @@
             <span class="footer-heading-accent"></span>
             יצירת קשר
           </h3>
-          <ul class="footer-contact" style=""><li>
+          <ul class="footer-contact" ><li>
               <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1778105061443-l5bs5le8j" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
-              <span class="contact-text"><a href="/cdn-cgi/l/email-protection#b7ded9d1d8f7c4c2d9c1d2cf99d4d899dedb" style=""><span class="__cf_email__" data-cfemail="fb92959d94bb888e958d9e83d59894d59297">[email&nbsp;protected]</span></a></span>
+              <span class="contact-text"><a href="/cdn-cgi/l/email-protection#b7ded9d1d8f7c4c2d9c1d2cf99d4d899dedb" ><span class="__cf_email__" data-cfemail="fb92959d94bb888e958d9e83d59894d59297">[email&nbsp;protected]</span></a></span>
             </li><li>
               <span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1778105061443-bsdqnj5l1" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
-              <span class="contact-text"><a href="tel:0502846662" style="">0502846662</a></span>
+              <span class="contact-text"><a href="tel:0502846662" >0502846662</a></span>
             </li><li>
               <span class="contact-icon"><i class="fas fa-map-marker-alt" style="cursor: pointer;"></i></span>
               <span class="contact-text">מנחם בגין 7, רמת גן</span>
@@ -1604,7 +1612,7 @@
     <div class="footer-container">
       <div class="footer-bottom-inner">
         <p class="footer-copyright">© 2026 SUNVEX ENERGY. כל הזכויות שמורות.</p>
-        <div class="footer-legal" style="">
+        <div class="footer-legal" >
           <a href="/privacy">מדיניות פרטיות</a>
           <span class="footer-legal-sep"></span>
           <a href="/terms">תנאי שימוש</a>
