@@ -9693,15 +9693,7 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 }
 
 .navbar .logo {
-  filter: brightness(0) invert(1);
-}
-
-.navbar .logo {
-  filter: brightness(0) invert(1) !important;
-}
-
-.site-footer .logo {
-  filter: brightness(0) invert(1) !important;
+  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
