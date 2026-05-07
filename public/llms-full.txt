@@ -733,7 +733,7 @@ SUNVEX ENERGY היא חברה ישראלית בתחום האנרגיה הסול�
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -1289,7 +1289,7 @@ SUNVEX ENERGY היא חברה ישראלית המתמחה באנרגיה סול�
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -1977,7 +1977,7 @@ SUNVEX ENERGY מלווה אתכם בבחינת פתרונות מימון נגי�
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -2223,15 +2223,15 @@ Description: מוכן לדעת כמה הגג שלך יכול להכניס? צו�
 
 
 
-[business_phone]
+0502846662
 
 
 
-[business_email]
+info@sunvex.co.il
 
 
 
-[business_address]
+Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -2403,7 +2403,7 @@ Description: מוכן לדעת כמה הגג שלך יכול להכניס? צו�
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -2507,7 +2507,7 @@ Description: מדיניות הפרטיות שלנו - כיצד אנו אוספי
 
 
 
-SUNVEX ENERGY ("החברה", "אנו", "שלנו") מחויבת להגן על פרטיותכם. מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים ומגינים על המידע שלכם בעת השימוש באתר [business_website] ("השירות").
+SUNVEX ENERGY ("החברה", "אנו", "שלנו") מחויבת להגן על פרטיותכם. מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים ומגינים על המידע שלכם בעת השימוש באתר https://sunvex.co.il ("השירות").
 
 
 ## 1. איסוף מידע
@@ -2605,11 +2605,11 @@ SUNVEX ENERGY ("החברה", "אנו", "שלנו") מחויבת להגן על פ
 
 - חברה: SUNVEX ENERGY
 
-- אימייל: [business_email]
+- אימייל: info@sunvex.co.il
 
-- טלפון: [business_phone]
+- טלפון: 0502846662
 
-- כתובת: [business_address]
+- כתובת: Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -2661,7 +2661,7 @@ SUNVEX ENERGY ("החברה", "אנו", "שלנו") מחויבת להגן על פ
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -2871,9 +2871,9 @@ SUNVEX ENERGY מחויבת להנגיש את השירותים לכלל הציב�
 
 - חברה: SUNVEX ENERGY
 
-- אימייל: [business_email]
+- אימייל: info@sunvex.co.il
 
-- טלפון: [business_phone]
+- טלפון: 0502846662
 
 
 
@@ -2928,7 +2928,7 @@ SUNVEX ENERGY מחויבת להנגיש את השירותים לכלל הציב�
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -3161,11 +3161,11 @@ SUNVEX ENERGY מספקת אנרגיה סולארית ואנרגיה מתחדשת
 
 - חברה: SUNVEX ENERGY
 
-- אימייל: [business_email]
+- אימייל: info@sunvex.co.il
 
-- טלפון: [business_phone]
+- טלפון: 0502846662
 
-- כתובת: [business_address]
+- כתובת: Menachem Begin 7, Ramat Gan, Israel
 
 
 
@@ -3214,7 +3214,7 @@ SUNVEX ENERGY מספקת אנרגיה סולארית ואנרגיה מתחדשת
 
 - info@sunvex.co.il
 - 0502846662
-- Menachem Begin 7, Ramat Gan
+- Menachem Begin 7, Ramat Gan, Israel
 
 
 
