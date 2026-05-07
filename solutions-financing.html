@@ -319,18 +319,18 @@
         #mic-access-tool-general-button, .mic-access-tool-general-button,
         #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
         ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
-        #mic-access-tool-box, .mic-access-tool-box, #mic-init-access-tool #mic-access-tool-box,
-        div[id*="mic-access-tool-box"], ._access-menu {
-          visibility: hidden; opacity: 0; pointer-events: auto !important;
+        #mic-access-tool-box.opened-mic-access-tool, .mic-access-tool-box.opened-mic-access-tool,
+        #mic-init-access-tool #mic-access-tool-box.opened-mic-access-tool {
+          visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
         }
       }
       @media (min-width: 769px) {
         #mic-access-tool-general-button, .mic-access-tool-general-button,
         #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
         ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
-        #mic-access-tool-box, .mic-access-tool-box, #mic-init-access-tool #mic-access-tool-box,
-        div[id*="mic-access-tool-box"], ._access-menu {
-          visibility: hidden; opacity: 0; pointer-events: auto !important;
+        #mic-access-tool-box.opened-mic-access-tool, .mic-access-tool-box.opened-mic-access-tool,
+        #mic-init-access-tool #mic-access-tool-box.opened-mic-access-tool {
+          visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
         }
       }
     </style>
@@ -1313,7 +1313,7 @@
           <div class="footer-social">
             <a href="#" aria-label="Facebook" style="display:none !important;"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram" style="display:none !important;"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1778105061443-r4s6ync5x" data-icon-type="fontawesome"></i></a>
-            <a href="#" aria-label="WhatsApp" style="display:none !important;"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1778105061443-ug125w6ch" data-icon-type="fontawesome"></i></a>
+            <a href="https://chat.whatsapp.com/CUlGmcb7ZKp4CTJjoeJHjw" aria-label="WhatsApp"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1778105061443-ug125w6ch" data-icon-type="fontawesome"></i></a>
           </div>
         </div>
 
@@ -1383,7 +1383,7 @@
   </div>
 </footer>
   
-  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+  <a href="https://chat.whatsapp.com/CUlGmcb7ZKp4CTJjoeJHjw" class="whatsapp-float" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
   
