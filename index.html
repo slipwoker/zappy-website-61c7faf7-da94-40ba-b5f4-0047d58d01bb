@@ -246,6 +246,289 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  background-color: #12305F;
+  background-image: linear-gradient(135deg, #0D2147 0%, #1A3A6B 60%, #1E4A80 100%);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  padding-bottom: 70px;
+  direction: rtl;
+}
+
+/* Background image layer */
+.index-hero-section .index-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Scrim overlay */
+.index-hero-section .index-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(135deg, rgba(13,33,71,0.92) 0%, rgba(26,58,107,0.78) 60%, rgba(13,33,71,0.55) 100%),
+    linear-gradient(to top, rgba(13,33,71,0.85) 0%, transparent 60%);
+}
+
+/* Solar rays decoration */
+.index-hero-section .index-hero-rays {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 55%;
+  max-width: 600px;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Container */
+.index-hero-section .index-hero-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 24px 60px;
+}
+
+/* Content block */
+.index-hero-section .index-hero-content {
+  max-width: 720px;
+  margin-inline-start: 0;
+}
+
+/* Badge */
+.index-hero-section .index-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(247, 148, 29, 0.18);
+  border: 1px solid rgba(247, 148, 29, 0.45);
+  border-radius: 100px;
+  padding: 7px 16px;
+  color: var(--accent);
+  font-family: 'Space Grotesk', 'Heebo', Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  direction: rtl;
+  text-align: start;
+}
+
+.index-hero-section .index-hero-badge svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Main headline */
+.index-hero-section .index-hero-headline {
+  font-family: 'Space Grotesk', 'Heebo', Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-light);
+  letter-spacing: -0.01em;
+  margin: 0 0 20px 0;
+  text-align: start;
+  text-shadow: 0 2px 20px rgba(13,33,71,0.5);
+}
+
+/* Accent span in headline */
+.index-hero-section .index-hero-accent {
+  background: linear-gradient(135deg, #F7941D 0%, #FFC107 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+/* Subtitle (H3) */
+.index-hero-section .index-hero-subtitle {
+  font-family: 'Inter', 'Assistant', Arial, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-light);
+  opacity: 0.92;
+  margin: 0 0 22px 0;
+  text-align: start;
+  text-shadow: 0 1px 8px rgba(13,33,71,0.4);
+  max-width: 660px;
+}
+
+/* Trust signals paragraph */
+.index-hero-section .index-hero-trust {
+  font-family: 'Inter', 'Assistant', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin: 0 0 36px 0;
+  text-align: start;
+  opacity: 1;
+  line-height: 1.6;
+}
+
+/* CTA buttons row */
+.index-hero-section .index-hero-ctas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary CTA button */
+.index-hero-section .index-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #F7941D 0%, #FFC107 100%);
+  color: #ffffff;
+  font-family: 'Space Grotesk', 'Heebo', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(247, 148, 29, 0.45);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.index-hero-section .index-hero-btn-primary svg {
+  transform: scaleX(-1);
+  flex-shrink: 0;
+}
+
+.index-hero-section .index-hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(247, 148, 29, 0.6);
+  color: #ffffff;
+}
+
+/* Outline CTA button */
+.index-hero-section .index-hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-light);
+  font-family: 'Space Grotesk', 'Heebo', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 13px 30px;
+  border-radius: 100px;
+  border: 2px solid rgba(248, 248, 246, 0.55);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.index-hero-section .index-hero-btn-outline:hover {
+  background: rgba(248, 248, 246, 0.12);
+  border-color: rgba(248, 248, 246, 0.9);
+  transform: translateY(-2px);
+  color: var(--text-light);
+}
+
+/* Bottom divider wrapper */
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100svh;
+    padding-bottom: 70px;
+  }
+
+  .index-hero-section .index-hero-container {
+    padding: 110px 16px 50px;
+  }
+
+  .index-hero-section .index-hero-content {
+    max-width: 100%;
+  }
+
+  .index-hero-section .index-hero-headline {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .index-hero-section .index-hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .index-hero-section .index-hero-trust {
+    font-size: 0.8rem;
+    margin-bottom: 28px;
+  }
+
+  .index-hero-section .index-hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .index-hero-section .index-hero-btn-primary,
+  .index-hero-section .index-hero-btn-outline {
+    justify-content: center;
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  .index-hero-section .index-hero-rays {
+    width: 80%;
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .index-hero-section .index-hero-headline {
+    font-size: 3.6rem;
+  }
+
+  .index-hero-section .index-hero-subtitle {
+    font-size: 1.15rem;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -767,74 +1050,68 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" data-zappy-content-align="lower-right" style="position: relative; overflow: hidden; --zappy-bg-overlay: rgba(10, 30, 70, 0.79);" data-zappy-bg-color="" data-zappy-bg-image="" data-zappy-bg-overlay-color="#0a1e46" data-zappy-bg-overlay-opacity="79" data-zappy-bg-video-type="upload" data-zappy-bg-video-url="assets/hero-video-254958-1778183306462.mp4" data-zappy-bg-type="video"><div class="zappy-section-video-bg" style="position: absolute; inset: 0px; z-index: 0; overflow: hidden; pointer-events: none;"><div class="zappy-section-video-overlay" style="position: absolute; inset: 0px; z-index: 1; background: rgba(10, 30, 70, 0.79); pointer-events: none;"></div><video class="zappy-section-video" autoplay="" muted="" loop="" playsinline="" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%, -50%);object-fit:cover;z-index:0;">
-  <source src="/assets/hero-video-254958-1778183306462.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video></div>
-<div class="hero-video-background zappy-editable-video-bg" style="display: none" data-zappy-original-bg="hidden" id="hero-video-bg-1778183465363" data-original-image-src="/assets/site-index-hero-image-1.webp">
-  <div class="hero-video-overlay" style="display: none; transition: background 0.3s" data-zappy-original-bg="hidden"></div>
-  <video class="hero-video" autoplay="" muted="" loop="" playsinline="">
-    <source src="/assets/hero-video-1778182262146.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <img class="hero-video-fallback" src="/assets/site-index-hero-image-1.webp" alt="Hero background" loading="lazy">
-</div>
-  <!-- Background Image Layer -->
-  <div class="index-hero-bg-wrapper" style="display: none" data-zappy-original-bg="hidden">
-    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Aerial golden-hour photograph of a sunlit Israeli residential rooftop covered with modern blue solar panels, warm amber sunlight casting long shadows across the panels, surrounding neighborhood visible with similar houses, clear sky with soft clouds, Mediterranean architectural style, photorealistic, bright and aspirational mood, professional real estate photography quality" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="גג בית ישראלי עם פאנלים סולאריים בשעת הזהב" class="index-hero-bg-img hero-original-image-hidden" data-hero-background="true" data-element-type="image" data-element-id="img-1778147504544-l5gz8y805" style="; display: none !important;">
-  </div>
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="index-hero-section">
+  <!-- Background Image -->
+  <div class="index-hero-bg" style="background-image: url('assets/site-index-hero-image-1.webp'); background-size: cover; background-position: center;"></div>
 
-  <!-- Scrim Overlay -->
-  <div class="index-hero-scrim" aria-hidden="true" style="display: none" data-zappy-original-bg="hidden"></div>
+  <!-- Dark gradient scrim overlay -->
+  <div class="index-hero-scrim" aria-hidden="true"></div>
 
-  <!-- Solar Rays Decorative Motif -->
-  <svg class="index-hero-solar-rays" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMin meet" style="position: relative; z-index: 2">
-    <g opacity="0.12" fill="#F7941D">
-      <line x1="500" y1="0" x2="0" y2="500" stroke="#F7941D" stroke-width="2" opacity="0.5"></line>
-      <line x1="500" y1="0" x2="50" y2="500" stroke="#F7941D" stroke-width="2" opacity="0.5"></line>
-      <line x1="500" y1="0" x2="100" y2="500" stroke="#F7941D" stroke-width="1.5" opacity="0.4"></line>
-      <line x1="500" y1="0" x2="150" y2="500" stroke="#F7941D" stroke-width="1.5" opacity="0.4"></line>
-      <line x1="500" y1="0" x2="200" y2="500" stroke="#F7941D" stroke-width="1" opacity="0.3"></line>
-      <line x1="500" y1="0" x2="250" y2="500" stroke="#F7941D" stroke-width="1" opacity="0.3"></line>
-      <line x1="500" y1="0" x2="300" y2="500" stroke="#F7941D" stroke-width="1" opacity="0.25"></line>
-      <line x1="500" y1="0" x2="350" y2="500" stroke="#F7941D" stroke-width="1" opacity="0.2"></line>
-      <line x1="500" y1="0" x2="400" y2="500" stroke="#F7941D" stroke-width="1" opacity="0.15"></line>
-      <line x1="500" y1="0" x2="500" y2="300" stroke="#F7941D" stroke-width="1" opacity="0.15"></line>
-      <line x1="500" y1="0" x2="500" y2="200" stroke="#F7941D" stroke-width="1.5" opacity="0.2"></line>
-      <line x1="500" y1="0" x2="500" y2="100" stroke="#F7941D" stroke-width="2" opacity="0.3"></line>
+  <!-- Solar rays decorative motif -->
+  <svg class="index-hero-rays" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMin meet">
+    <g opacity="0.13" fill="none" stroke="#F7941D" stroke-width="1.5">
+      <line x1="600" y1="0" x2="0" y2="600"></line>
+      <line x1="600" y1="0" x2="60" y2="600"></line>
+      <line x1="600" y1="0" x2="130" y2="600"></line>
+      <line x1="600" y1="0" x2="200" y2="600"></line>
+      <line x1="600" y1="0" x2="270" y2="600"></line>
+      <line x1="600" y1="0" x2="340" y2="600"></line>
+      <line x1="600" y1="0" x2="410" y2="600"></line>
+      <line x1="600" y1="0" x2="480" y2="600"></line>
+      <line x1="600" y1="0" x2="550" y2="600"></line>
+      <line x1="600" y1="0" x2="600" y2="400"></line>
+      <line x1="600" y1="0" x2="600" y2="300"></line>
+      <line x1="600" y1="0" x2="600" y2="200"></line>
+      <line x1="600" y1="0" x2="500" y2="0"></line>
+      <line x1="600" y1="0" x2="400" y2="0"></line>
     </g>
   </svg>
 
-  <!-- Main Content -->
-  <div class="index-hero-container" data-zappy-align-target="true" style="position: relative; z-index: 2;">
+  <!-- Content -->
+  <div class="index-hero-container">
     <div class="index-hero-content">
-      <!-- Label -->
-      <!-- H1 -->
 
-      <!-- Supporting Subtitle -->
-      <h3 class="index-hero-subtitle" >SUNVEX ENERGY עוזרת למשפחות ובעלי נכסים בישראל לנצל את אנרגיית השמש — לחסוך בהוצאות החשמל, לייצר הכנסה פוטנציאלית מחברת החשמל, ולהתקדם לעתיד ירוק וחכם יותר. בכפוף לבדיקת התאמה, מצב הגג וצריכת החשמל.</h3>
+      <!-- Label badge -->
+      <div class="index-hero-badge">
+        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <span>אנרגיה סולארית חכמה לבית הישראלי</span>
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="index-hero-headline">הפכו את הגג שלכם<br><span class="index-hero-accent">למקור הכנסה</span></h1>
+
+      <!-- Supporting subtitle (H3 as required) -->
+      <h3 class="index-hero-subtitle">SUNVEX ENERGY עוזרת למשפחות ובעלי נכסים בישראל לנצל את אנרגיית השמש — לחסוך בהוצאות החשמל, לייצר הכנסה פוטנציאלית מחברת החשמל, ולהתקדם לעתיד ירוק וחכם יותר. בכפוף לבדיקת התאמה, מצב הגג וצריכת החשמל.</h3>
+
+      <!-- Trust signals paragraph -->
+      <p class="index-hero-trust">✓ ללא התחייבות &nbsp;·&nbsp; ✓ הערכה מקצועית חינם &nbsp;·&nbsp; ✓ מאות לקוחות מרוצים בישראל</p>
 
       <!-- CTA Buttons -->
       <div class="index-hero-ctas">
-        <a href="/contact" class="index-hero-btn-primary btn btn-primary" style="outline: none; color: rgb(18, 48, 95) !important; border-color: transparent !important; background-color: transparent !important; background-image: linear-gradient(135deg, rgb(232, 133, 10), rgb(247, 148, 29)) !important;" data-element-type="button" data-element-id="btn-1778147504535-6q5fot38q" data-native-element="true">
-          <i class="fas fa-check-circle"></i>
+        <a href="/contact" class="index-hero-btn-primary">
+          <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
           בדיקת התאמה חינם
         </a>
-        <a href="/solutions-financing" class="index-hero-btn-secondary btn btn-outline btn-secondary" data-element-type="button" data-element-id="btn-1778147504535-ninfoqroe" data-native-element="true" style="outline: none; color: rgb(248, 248, 246) !important; border-color: rgb(248, 248, 246) !important; background-color: transparent !important; background-image: none !important;">
-          <i class="fas fa-coins"></i>
-          אפשרויות מימון
-        </a>
+        <a href="/solutions-financing" class="index-hero-btn-outline">אפשרויות מימון</a>
       </div>
 
-      <!-- Trust Line -->
-      <p class="index-hero-trust" >✓&nbsp;ללא התחייבות&nbsp;&nbsp;·&nbsp;&nbsp;✓&nbsp;הערכה מקצועית חינם&nbsp;&nbsp;·&nbsp;&nbsp;✓&nbsp;מאות לקוחות מרוצים בישראל</p>
     </div>
   </div>
 
-  <!-- Bottom Divider: Angled solar-ray inspired SVG -->
+  <!-- Bottom divider -->
   <div class="index-hero-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,55 L400,20 L800,50 L1200,10 L1200,90 Z" fill="#FFFFFF"></path>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,70 L0,35 Q180,10 360,32 T720,28 Q900,10 1080,30 T1440,25 L1440,70 Z" fill="#FFFFFF"></path>
     </svg>
   </div>
 </section>
