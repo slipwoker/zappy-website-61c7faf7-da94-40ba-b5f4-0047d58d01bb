@@ -9717,6 +9717,29 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   object-fit: contain !important;
   z-index: 0;
 }
+
+body #acctoolbar-btn,
+body .acctoolbar-btn,
+body [id*="acctoolbar"] > button,
+body [class*="acctoolbar"] > button {
+  background: linear-gradient(135deg, #F7941D 0%, var(--accent-color) 100%) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 18px rgba(247, 148, 29, 0.7), 0 4px 16px rgba(247, 148, 29, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+body [id*="acctoolbar"] > button:hover,
+body [class*="acctoolbar"] > button:hover {
+  box-shadow: 0 0 28px rgba(247, 148, 29, 0.9), 0 6px 24px rgba(247, 148, 29, 0.6) !important;
+  transform: scale(1.08) !important;
+}
+
+body [id*="acctoolbar"] > button svg,
+body [class*="acctoolbar"] > button svg,
+body [id*="acctoolbar"] > button img {
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6)) brightness(1.2) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
