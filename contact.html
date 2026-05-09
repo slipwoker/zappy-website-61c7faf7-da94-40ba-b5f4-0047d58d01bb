@@ -872,7 +872,7 @@
           </p><h2 class="ccf-form-title">השאירו פרטים ונחזור אליכם</h2>
           <p class="ccf-form-subtitle" style="color: rgb(18, 48, 95) !important;">מלאו את הטופס ומומחה מטעם SUNVEX ENERGY יבצע בדיקת כדאיות כלכלית ראשונית ויחזור אליכם עם הכוונה לגבי הצעדים הבאים.</p>
         </div>
-        <form class="contact-form" novalidate="">
+        <form class="contact-form" novalidate="" id="sunvex-contact-form">
           <div class="ccf-field-group">
             <label class="ccf-label" for="ccf-name">שם מלא</label>
             <input class="ccf-input" type="text" id="ccf-name" name="full_name" placeholder="ישראל ישראלי" required="">
@@ -900,6 +900,21 @@
             <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           </button>
         </form>
+        <script>
+        (function() {
+          var form = document.getElementById('sunvex-contact-form');
+          if (!form) return;
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('ccf-name') ? document.getElementById('ccf-name').value : '';
+            var phone = document.getElementById('ccf-phone') ? document.getElementById('ccf-phone').value : '';
+            var message = document.getElementById('ccf-message') ? document.getElementById('ccf-message').value : '';
+            var text = 'שלום, אני ' + name + ' | טלפון: ' + phone + (message ? ' | ' + message : '');
+            var waUrl = 'https://wa.me/972502846662?text=' + encodeURIComponent(text);
+            window.open(waUrl, '_blank');
+          });
+        })();
+        </script>
       </div>
     </div>
 
@@ -1106,7 +1121,7 @@
             <span class="footer-heading-accent"></span>
             ניווט מהיר
           </h3>
-          <ul class="footer-links" style=""><li><a href="/">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/solutions-financing">פתרונות ומימון</a></li><li><a href="/contact">צור קשר</a></li></ul>
+          <ul class="footer-links" ><li><a href="/">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/solutions-financing">פתרונות ומימון</a></li><li><a href="/contact">צור קשר</a></li></ul>
         </div>
 
         <!-- Contact Info -->
@@ -1115,12 +1130,12 @@
             <span class="footer-heading-accent"></span>
             יצירת קשר
           </h3>
-          <ul class="footer-contact" style=""><li>
+          <ul class="footer-contact" ><li>
               <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1778105061443-l5bs5le8j" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
-              <span class="contact-text"><a href="/cdn-cgi/l/email-protection#b7ded9d1d8f7c4c2d9c1d2cf99d4d899dedb" style=""><span class="__cf_email__" data-cfemail="fb92959d94bb888e958d9e83d59894d59297">[email&nbsp;protected]</span></a></span>
+              <span class="contact-text"><a href="/cdn-cgi/l/email-protection#b7ded9d1d8f7c4c2d9c1d2cf99d4d899dedb" ><span class="__cf_email__" data-cfemail="fb92959d94bb888e958d9e83d59894d59297">[email&nbsp;protected]</span></a></span>
             </li><li>
               <span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1778105061443-bsdqnj5l1" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
-              <span class="contact-text"><a href="tel:0502846662" style="">0502846662</a></span>
+              <span class="contact-text"><a href="tel:0502846662" >0502846662</a></span>
             </li><li>
               <span class="contact-icon"><i class="fas fa-map-marker-alt" style="cursor: pointer;"></i></span>
               <span class="contact-text">מנחם בגין 7, רמת גן</span>
@@ -1153,7 +1168,7 @@
     <div class="footer-container">
       <div class="footer-bottom-inner">
         <p class="footer-copyright">© 2026 SUNVEX ENERGY. כל הזכויות שמורות.</p>
-        <div class="footer-legal" style="">
+        <div class="footer-legal" >
           <a href="/privacy">מדיניות פרטיות</a>
           <span class="footer-legal-sep"></span>
           <a href="/terms">תנאי שימוש</a>
